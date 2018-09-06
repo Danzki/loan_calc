@@ -16,7 +16,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     var typePay = ["Аннуитетный", "Дифференцированный" ]
     var months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" ]
-    var years = (2018...2100).map { x in "\(x)" }
+    var years = (Date().year...2100).map { x in "\(x)" }
     var pickerPay = UIPickerView()
     var pickerMonth = UIPickerView()
     var pickerYear = UIPickerView()
@@ -34,6 +34,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         yearBox.inputView = pickerYear
         
         textBox.setBottomBorder(borderColor: UIColor.darkGray)
+        textBox.text = typePay[0]
+        monthBox.text = months[0]
+        yearBox.text = years[0]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -96,4 +99,10 @@ extension UITextField
         borderLine.backgroundColor = borderColor
         self.addSubview(borderLine)
     }
+}
+
+extension Date{
+    var day:Int {return Calendar.current.component(.day, from:self)}
+    var month:Int {return Calendar.current.component(.month, from:self)}
+    var year:Int {return Calendar.current.component(.year, from:self)}
 }
