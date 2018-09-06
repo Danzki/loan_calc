@@ -9,6 +9,7 @@
 import Foundation
 
 class LoanCalc {
+    //parameters for calculation
     var FirstPay: Float?
     var Amount: Float?
     var Rate: Float?
@@ -16,8 +17,9 @@ class LoanCalc {
     var TypePay: Int?
     var StartMonth: String?
     var StartYear: String?
-    var 
     
+    //results of calculation
+    var MonthlyPayment: Float?
     
     init() {
         FirstPay = 0.0
