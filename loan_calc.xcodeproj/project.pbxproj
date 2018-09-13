@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4686CB1C214A70EB00E3B7FD /* CredCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4686CB1B214A70EB00E3B7FD /* CredCalc.swift */; };
+		4686CB1C214A70EB00E3B7FD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4686CB1B214A70EB00E3B7FD /* FirstViewController.swift */; };
+		4686CB1E214B113200E3B7FD /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4686CB1D214B113200E3B7FD /* ThirdViewController.swift */; };
 		46A044122141B88700DED5FA /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A044112141B88700DED5FA /* DataClass.swift */; };
 		46EA1ABD2135F432002C2045 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA1ABC2135F432002C2045 /* AppDelegate.swift */; };
-		46EA1ABF2135F432002C2045 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA1ABE2135F432002C2045 /* ViewController.swift */; };
+		46EA1ABF2135F432002C2045 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA1ABE2135F432002C2045 /* SecondViewController.swift */; };
 		46EA1AC22135F432002C2045 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46EA1AC02135F432002C2045 /* Main.storyboard */; };
 		46EA1AC52135F432002C2045 /* loan_calc.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46EA1AC32135F432002C2045 /* loan_calc.xcdatamodeld */; };
 		46EA1AC72135F433002C2045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46EA1AC62135F433002C2045 /* Assets.xcassets */; };
@@ -18,11 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4686CB1B214A70EB00E3B7FD /* CredCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredCalc.swift; sourceTree = "<group>"; };
+		4686CB1B214A70EB00E3B7FD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		4686CB1D214B113200E3B7FD /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		46A044112141B88700DED5FA /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; };
 		46EA1AB92135F432002C2045 /* loan_calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loan_calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46EA1ABC2135F432002C2045 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		46EA1ABE2135F432002C2045 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		46EA1ABE2135F432002C2045 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		46EA1AC12135F432002C2045 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46EA1AC42135F432002C2045 /* loan_calc.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = loan_calc.xcdatamodel; sourceTree = "<group>"; };
 		46EA1AC62135F433002C2045 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,9 +64,10 @@
 			children = (
 				46EA1ABC2135F432002C2045 /* AppDelegate.swift */,
 				46A044112141B88700DED5FA /* DataClass.swift */,
-				46EA1ABE2135F432002C2045 /* ViewController.swift */,
+				4686CB1B214A70EB00E3B7FD /* FirstViewController.swift */,
+				46EA1ABE2135F432002C2045 /* SecondViewController.swift */,
+				4686CB1D214B113200E3B7FD /* ThirdViewController.swift */,
 				46EA1AC02135F432002C2045 /* Main.storyboard */,
-				4686CB1B214A70EB00E3B7FD /* CredCalc.swift */,
 				46EA1AC62135F433002C2045 /* Assets.xcassets */,
 				46EA1AC82135F433002C2045 /* LaunchScreen.storyboard */,
 				46EA1ACB2135F433002C2045 /* Info.plist */,
@@ -144,10 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46EA1ABF2135F432002C2045 /* ViewController.swift in Sources */,
+				46EA1ABF2135F432002C2045 /* SecondViewController.swift in Sources */,
 				46EA1ABD2135F432002C2045 /* AppDelegate.swift in Sources */,
 				46A044122141B88700DED5FA /* DataClass.swift in Sources */,
-				4686CB1C214A70EB00E3B7FD /* CredCalc.swift in Sources */,
+				4686CB1C214A70EB00E3B7FD /* FirstViewController.swift in Sources */,
+				4686CB1E214B113200E3B7FD /* ThirdViewController.swift in Sources */,
 				46EA1AC52135F432002C2045 /* loan_calc.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

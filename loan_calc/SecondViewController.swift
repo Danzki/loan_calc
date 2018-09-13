@@ -8,11 +8,29 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var textBox: UITextField!
     @IBOutlet weak var monthBox: UITextField!
     @IBOutlet weak var yearBox: UITextField!
+    @IBOutlet weak var FirstPayField: UITextField!
+    @IBOutlet weak var SummaField: UITextField!
+    @IBOutlet weak var RateField: UITextField!
+    @IBOutlet weak var MonthsField: UITextField!
+    
+    
+    @IBAction func calcButton(_ sender: UIButton) {
+        //TODO: assign inputs to certain parameter of object
+        loan.paramsAmount["FirstPay"] = Double(FirstPayField.text!)
+        loan.paramsAmount["Amount"] = Double(SummaField.text!)
+        loan.paramsAmount["Rate"] = Double(RateField.text!)
+        loan.paramsType["MonthPeriod"] = Int(MonthsField.text!)
+        //TODO: call Loan.calculate method
+        //TODO: show third view with results
+        
+        print(loan.paramsAmount)
+        print(loan.paramsType)
+    }
     
     var typePay = ["Аннуитетный", "Дифференцированный" ]
     var months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" ]
@@ -21,7 +39,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     var pickerMonth = UIPickerView()
     var pickerYear = UIPickerView()
     
-    var currentCalc = LoanCalc()
+    public var loan = LoanCalc()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,13 +75,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //TypePay picker -
         if pickerView == pickerPay {
+            loan.paramsType["TypePay"] = row
             textBox.text = typePay[row]
         }
         else if pickerView == pickerMonth {
+            loan.paramsType["Month"] = row
             monthBox.text = months[row]
         }
         else if pickerView == pickerYear {
+            loan.paramsType["Year"] = row
             yearBox.text = years[row]
         }
 
@@ -85,12 +107,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         return title
     }
-    
-    
-    //calculate
-    //@IBAction func Push(_ sender: UIButton, forEvent event: UIEvent) {
-        
-    //}
     
     
 

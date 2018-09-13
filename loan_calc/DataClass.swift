@@ -23,7 +23,7 @@ class LoanCalc {
     }
     
     func calculation(TypePay: Int) {
-        if TypePay == 1 {
+        if TypePay == 0 {
             annuitetCalculation()
         }
         else {
