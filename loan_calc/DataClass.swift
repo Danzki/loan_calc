@@ -18,8 +18,17 @@ class LoanCalc {
     
     init() {
         self.paramsAmount = ["FirstPay": 0.00, "Amount": 0.00, "Rate": 0.00]
-        self.paramsType = ["MonthsPeriod": 0, "TypePay": 0]
+        self.paramsType = ["MonthsPeriod": 0, "TypePay": 0, "Month": 1, "Year": Date().year]
         self.result = ["MonthlyPayment": 0.00, "OverPaymentAmount": 0.00]
+    }
+    
+    func calculation(TypePay: Int) {
+        if TypePay == 1 {
+            annuitetCalculation()
+        }
+        else {
+            diffCalculation()
+        }
     }
     
     func annuitetCalculation() {
@@ -37,6 +46,11 @@ class LoanCalc {
         
         //4. Итого переплата по кредиту составила 338 000 рублей. Платеж * срок - Сумма кредита
         self.result["OverPaymentAmount"] = self.result["MonthlyPayment"]! * Double(self.paramsType["MonthsPeriod"]!) - self.paramsAmount["Amount"]!
+    }
+    
+    func diffCalculation() {
+        self.result["MonthlyPayment"] = 0
+        self.result["OverPaymentAmount"] = 0
     }
     
 }

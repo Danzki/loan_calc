@@ -21,6 +21,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     var pickerMonth = UIPickerView()
     var pickerYear = UIPickerView()
     
+    var currentCalc = LoanCalc()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerPay.delegate = self
@@ -83,6 +85,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         return title
     }
+    
+    
+    //calculate
+    //@IBAction func Push(_ sender: UIButton, forEvent event: UIEvent) {
+        
+    //}
+    
+    
 
 }
 

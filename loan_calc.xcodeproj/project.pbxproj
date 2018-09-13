@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4686CB1C214A70EB00E3B7FD /* CredCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4686CB1B214A70EB00E3B7FD /* CredCalc.swift */; };
 		46A044122141B88700DED5FA /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A044112141B88700DED5FA /* DataClass.swift */; };
 		46EA1ABD2135F432002C2045 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA1ABC2135F432002C2045 /* AppDelegate.swift */; };
 		46EA1ABF2135F432002C2045 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA1ABE2135F432002C2045 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4686CB1B214A70EB00E3B7FD /* CredCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredCalc.swift; sourceTree = "<group>"; };
 		46A044112141B88700DED5FA /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; };
 		46EA1AB92135F432002C2045 /* loan_calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loan_calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46EA1ABC2135F432002C2045 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				46A044112141B88700DED5FA /* DataClass.swift */,
 				46EA1ABE2135F432002C2045 /* ViewController.swift */,
 				46EA1AC02135F432002C2045 /* Main.storyboard */,
+				4686CB1B214A70EB00E3B7FD /* CredCalc.swift */,
 				46EA1AC62135F433002C2045 /* Assets.xcassets */,
 				46EA1AC82135F433002C2045 /* LaunchScreen.storyboard */,
 				46EA1ACB2135F433002C2045 /* Info.plist */,
@@ -144,6 +147,7 @@
 				46EA1ABF2135F432002C2045 /* ViewController.swift in Sources */,
 				46EA1ABD2135F432002C2045 /* AppDelegate.swift in Sources */,
 				46A044122141B88700DED5FA /* DataClass.swift in Sources */,
+				4686CB1C214A70EB00E3B7FD /* CredCalc.swift in Sources */,
 				46EA1AC52135F432002C2045 /* loan_calc.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
