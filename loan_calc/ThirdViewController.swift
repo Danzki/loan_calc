@@ -13,10 +13,13 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var showPayment: UILabel!
     @IBOutlet weak var showOverPay: UILabel!
     
+    var loanResult: LoanCalc = LoanCalc()
     
     override func viewDidLoad() {
-        
-        
         super.viewDidLoad()
+        
+        showPayment.text = String(loanResult.result["MonthlyPayment"]!)
+        showOverPay.text = String(loanResult.result["OverPaymentAmount"]!)
+        
     }
 }

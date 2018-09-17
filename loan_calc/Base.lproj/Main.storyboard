@@ -139,7 +139,7 @@
                                 </state>
                                 <connections>
                                     <action selector="calcButton:" destination="zfA-1l-92y" eventType="touchUpInside" id="y0e-aj-5PW"/>
-                                    <segue destination="DOe-fl-FE8" kind="show" id="fzb-2B-TpU"/>
+                                    <segue destination="DOe-fl-FE8" kind="show" id="tFS-4X-xeF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -201,6 +201,7 @@
                         <outlet property="monthBox" destination="Ds0-rf-mXn" id="T3z-Vb-xhb"/>
                         <outlet property="textBox" destination="DPI-ZD-J9T" id="uk1-He-kY6"/>
                         <outlet property="yearBox" destination="LgP-mB-NNB" id="4Vg-Ld-wPq"/>
+                        <segue destination="DOe-fl-FE8" kind="presentation" identifier="CalculateButton" id="NQW-0d-MIs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n7M-f3-yvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -216,25 +217,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Платеж по кредиту" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ix-At-n7I">
-                                <rect key="frame" x="94" y="94" width="186" height="26"/>
+                                <rect key="frame" x="94" y="50" width="186" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="0.97772808200000005" green="0.96146038749999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Переплата по кредиту" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjB-Tm-mn4">
-                                <rect key="frame" x="84" y="230" width="206" height="24"/>
+                                <rect key="frame" x="84" y="186" width="206" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.97772808200000005" green="0.96146038749999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tha-qg-6kN">
-                                <rect key="frame" x="177" y="150" width="21" height="30"/>
+                                <rect key="frame" x="177" y="106" width="21" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.97772808200000005" green="0.96146038749999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ea-9Z-PNh">
-                                <rect key="frame" x="177" y="284" width="21" height="30"/>
+                                <rect key="frame" x="177" y="240" width="21" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.97772808200000005" green="0.96146038749999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -297,8 +298,7 @@
                                     <color key="titleColor" red="0.97772808200000005" green="0.96146038749999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="createLoanObj:" destination="bf9-1P-dnQ" eventType="touchUpInside" id="3JE-i8-yz7"/>
-                                    <segue destination="zfA-1l-92y" kind="show" id="2W8-q3-7pa"/>
+                                    <segue destination="zfA-1l-92y" kind="show" identifier="ShowPlus" id="2W8-q3-7pa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -318,7 +318,7 @@
                         <barButtonItem key="backBarButtonItem" title="Назад" id="BGo-rq-ygo"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="zfA-1l-92y" kind="show" id="1Fl-0M-osC"/>
+                        <segue destination="zfA-1l-92y" kind="show" identifier="ShowForm" id="1Fl-0M-osC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITS-h5-xfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -327,6 +327,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="NQW-0d-MIs"/>
         <segue reference="1Fl-0M-osC"/>
     </inferredMetricsTieBreakers>
 </document>

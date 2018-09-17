@@ -21,15 +21,19 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     @IBAction func calcButton(_ sender: UIButton) {
         //TODO: assign inputs to certain parameter of object
-        loan.paramsAmount["FirstPay"] = Double(FirstPayField.text!)
-        loan.paramsAmount["Amount"] = Double(SummaField.text!)
-        loan.paramsAmount["Rate"] = Double(RateField.text!)
-        loan.paramsType["MonthPeriod"] = Int(MonthsField.text!)
+        self.loan.paramsAmount["FirstPay"] = Double(FirstPayField.text!)
+        self.loan.paramsAmount["Amount"] = Double(SummaField.text!)
+        self.loan.paramsAmount["Rate"] = Double(RateField.text!)
+        self.loan.paramsType["MonthsPeriod"] = Int(MonthsField.text!)
         //TODO: call Loan.calculate method
+        self.loan.calculation(TypePay: loan.paramsType["TypePay"]!)
+        
         //TODO: show third view with results
         
-        print(loan.paramsAmount)
-        print(loan.paramsType)
+        print("SecondView")
+        print(self.loan.paramsType)
+        print(self.loan.paramsAmount)
+        print(self.loan.result)
     }
     
     var typePay = ["Аннуитетный", "Дифференцированный" ]
@@ -39,7 +43,7 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var pickerMonth = UIPickerView()
     var pickerYear = UIPickerView()
     
-    public var loan = LoanCalc()
+    var loan = LoanCalc()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +59,7 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         textBox.setBottomBorder(borderColor: UIColor.darkGray)
         textBox.text = typePay[0]
-        monthBox.text = months[0]
+        monthBox.text = months[Date().month]
         yearBox.text = years[0]
     }
     
@@ -108,6 +112,10 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         return title
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! ThirdViewController
+        vc.loanResult = self.loan
+    }
     
 
 }

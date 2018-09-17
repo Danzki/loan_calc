@@ -37,15 +37,15 @@ class LoanCalc {
         let RateMonth: Double = self.paramsAmount["Rate"]! / 12.00 / 100.00
         
         //2. Коэффициент аннуитета = (0,016*(1+0,016)^36)/((1+0,016)^36—1)=0,03676.
-        let monthPeriod = self.paramsType["MonthPeriod"]!
+        let monthPeriod = self.paramsType["MonthsPeriod"]!
         let power = NSDecimalNumber(decimal: pow(Decimal(1+RateMonth), Int(monthPeriod))).doubleValue
         let CoefAnnuitet: Double = (RateMonth * Double(power)) / (Double(power)-1)
         
         //3. Ежемесячный аннуитетный платеж = 0,03676*1 000 000 рублей = 37 163,58 рубля.
-        self.result["MonthlyPayment"] = self.paramsAmount["Amount"]! * CoefAnnuitet
+        self.result["MonthlyPayment"] = Double(self.paramsAmount["Amount"]! * CoefAnnuitet).roundTo(places: 2)
         
         //4. Итого переплата по кредиту составила 338 000 рублей. Платеж * срок - Сумма кредита
-        self.result["OverPaymentAmount"] = self.result["MonthlyPayment"]! * Double(self.paramsType["MonthsPeriod"]!) - self.paramsAmount["Amount"]!
+        self.result["OverPaymentAmount"] = Double(self.result["MonthlyPayment"]! * Double(self.paramsType["MonthsPeriod"]!) - self.paramsAmount["Amount"]!).roundTo(places: 2)
     }
     
     func diffCalculation() {
@@ -53,4 +53,12 @@ class LoanCalc {
         self.result["OverPaymentAmount"] = 0
     }
     
+    
+}
+
+extension Double {
+    func roundTo(places: Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
 }
