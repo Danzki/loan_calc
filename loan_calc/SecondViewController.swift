@@ -17,23 +17,94 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var SummaField: UITextField!
     @IBOutlet weak var RateField: UITextField!
     @IBOutlet weak var MonthsField: UITextField!
+    @IBOutlet weak var cButton: UIButton!
+    
+    //textFields validation
+    @IBAction func validateSummaField(_ sender: UITextField) {
+        if allowOnlyNumbersInTextField(string: sender.text!) {
+            SummaValid = true
+            if checkValid() {
+                cButton.isEnabled = true
+            }
+        }
+        else
+        {
+            sender.setFullBorder(borderColor: UIColor.red)
+            cButton.isEnabled = false
+        }
+    }
+    
+    @IBAction func validateFirstPay(_ sender: UITextField) {
+        if allowOnlyNumbersInTextField(string: sender.text!) {
+            FirstPayValid = true
+            if checkValid() {
+                cButton.isEnabled = true
+            }
+        }
+        else
+        {
+            sender.setFullBorder(borderColor: UIColor.red)
+            cButton.isEnabled = false
+        }
+    }
+    
+    @IBAction func validateRate(_ sender: UITextField) {
+        if allowOnlyNumbersInTextField(string: sender.text!) {
+            RateValid = true
+            if checkValid() {
+                cButton.isEnabled = true
+            }
+        }
+        else
+        {
+            sender.setFullBorder(borderColor: UIColor.red)
+            cButton.isEnabled = false
+        }
+    }
     
     
+    @IBAction func validateMonths(_ sender: UITextField) {
+        if allowOnlyNumbersInTextField(string: sender.text!) {
+            MonthsValid = true
+            if checkValid() {
+                cButton.isEnabled = true
+            }
+        }
+        else
+        {
+            sender.setFullBorder(borderColor: UIColor.red)
+            cButton.isEnabled = false
+        }
+    }
+    
+    //on edit actions
+    @IBAction func editSumma(_ sender: Any) {
+        SummaField.setBottomBorder(borderColor: UIColor.gray)
+    }
+    
+    @IBAction func firstPayEdit(_ sender: Any) {
+        FirstPayField.setBottomBorder(borderColor: UIColor.gray)
+    }
+    
+    @IBAction func rateEdit(_ sender: Any) {
+        RateField.setBottomBorder(borderColor: UIColor.gray)
+    }
+    
+    @IBAction func monthsEdit(_ sender: Any) {
+        MonthsField.setBottomBorder(borderColor: UIColor.gray)
+    }
+    
+    
+    //Button action
     @IBAction func calcButton(_ sender: UIButton) {
         //TODO: assign inputs to certain parameter of object
         self.loan.paramsAmount["FirstPay"] = Double(FirstPayField.text!)
         self.loan.paramsAmount["Amount"] = Double(SummaField.text!)
         self.loan.paramsAmount["Rate"] = Double(RateField.text!)
         self.loan.paramsType["MonthsPeriod"] = Int(MonthsField.text!)
+        
         //TODO: call Loan.calculate method
         self.loan.calculation(TypePay: loan.paramsType["TypePay"]!)
-        
-        //TODO: show third view with results
-        
-        print("SecondView")
-        print(self.loan.paramsType)
-        print(self.loan.paramsAmount)
-        print(self.loan.result)
     }
     
     var typePay = ["Аннуитетный", "Дифференцированный" ]
@@ -44,6 +115,11 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var pickerYear = UIPickerView()
     
     var loan = LoanCalc()
+    
+    var FirstPayValid: Bool = false
+    var SummaValid: Bool = false
+    var RateValid: Bool = false
+    var MonthsValid: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +133,11 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         monthBox.inputView = pickerMonth
         yearBox.inputView = pickerYear
         
-        textBox.setBottomBorder(borderColor: UIColor.darkGray)
+        FirstPayField.setBottomBorder(borderColor: UIColor.gray)
+        SummaField.setBottomBorder(borderColor: UIColor.gray)
+        RateField.setBottomBorder(borderColor: UIColor.gray)
+        MonthsField.setBottomBorder(borderColor: UIColor.gray)
+        
         textBox.text = typePay[0]
         monthBox.text = months[Date().month]
         yearBox.text = years[0]
@@ -117,7 +197,28 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         vc.loanResult = self.loan
     }
     
-
+    func allowOnlyNumbersInTextField(string : String)->Bool{
+        let numberCharacterSet = NSCharacterSet.decimalDigits
+        let inputString = string
+        let range = inputString.rangeOfCharacter(from: numberCharacterSet)
+        // range will be nil if no numbers are found
+        if range != nil {
+            return true
+        }
+        else {
+            return false
+            // do your stuff
+        }
+    }
+    
+    func checkValid()->Bool{
+        if SummaValid && FirstPayValid && MonthsValid && RateValid {
+            return true
+        }
+        else {
+            return false
+        }
+    }
 }
 
 extension UITextField
@@ -132,6 +233,12 @@ extension UITextField
         borderLine.frame = CGRect(x: 0, y: Double(self.frame.height) - width, width: Double(self.frame.width), height: width)
         borderLine.backgroundColor = borderColor
         self.addSubview(borderLine)
+    }
+    
+    func setFullBorder(borderColor: UIColor)
+    {
+        self.borderStyle = UITextBorderStyle.line
+        self.backgroundColor = borderColor
     }
 }
 

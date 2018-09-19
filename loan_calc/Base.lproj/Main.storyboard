@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PFS-c6-wwn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PFS-c6-wwn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,6 +36,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="editSumma:" destination="zfA-1l-92y" eventType="editingDidBegin" id="LyL-qa-BW3"/>
+                                    <action selector="validateSummaField:" destination="zfA-1l-92y" eventType="editingDidEnd" id="iiU-at-e0e"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ставка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KW1-Js-KUr">
                                 <rect key="frame" x="16" y="201" width="41" height="15"/>
@@ -50,6 +53,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="rateEdit:" destination="zfA-1l-92y" eventType="editingDidBegin" id="cm1-Hp-TS0"/>
+                                    <action selector="validateRate:" destination="zfA-1l-92y" eventType="editingDidEnd" id="K7f-KX-eAw"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Срок (месяцев)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62n-xK-fQR">
                                 <rect key="frame" x="16" y="249" width="93" height="15"/>
@@ -63,6 +70,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="monthsEdit:" destination="zfA-1l-92y" eventType="editingDidBegin" id="lsc-NJ-35A"/>
+                                    <action selector="validateMonths:" destination="zfA-1l-92y" eventType="editingDidEnd" id="D4T-ih-Eci"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дополнительные параметры" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hw-pp-0Px">
                                 <rect key="frame" x="56" y="297" width="263" height="24"/>
@@ -120,6 +131,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="firstPayEdit:" destination="zfA-1l-92y" eventType="editingDidBegin" id="aKK-7o-CyH"/>
+                                    <action selector="validateFirstPay:" destination="zfA-1l-92y" eventType="editingDidEnd" id="Irb-3n-YIB"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Начало погашения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFq-C5-XKy">
                                 <rect key="frame" x="16" y="389" width="111" height="15"/>
@@ -130,6 +145,7 @@
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="calcButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iD-6Q-FhE">
                                 <rect key="frame" x="20" y="434" width="325" height="69"/>
                                 <color key="backgroundColor" red="0.13725490200000001" green="0.52156862749999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="cButton"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8iD-6Q-FhE" secondAttribute="height" multiplier="343:73" id="4Wg-aV-dS4"/>
                                 </constraints>
@@ -198,6 +214,7 @@
                         <outlet property="MonthsField" destination="9qJ-k7-0oj" id="FlT-0G-e3R"/>
                         <outlet property="RateField" destination="L0X-0i-kaF" id="wnu-OJ-iYG"/>
                         <outlet property="SummaField" destination="cBh-pk-NEa" id="OyT-bh-d4Y"/>
+                        <outlet property="cButton" destination="8iD-6Q-FhE" id="lqG-9L-7dU"/>
                         <outlet property="monthBox" destination="Ds0-rf-mXn" id="T3z-Vb-xhb"/>
                         <outlet property="textBox" destination="DPI-ZD-J9T" id="uk1-He-kY6"/>
                         <outlet property="yearBox" destination="LgP-mB-NNB" id="4Vg-Ld-wPq"/>
@@ -217,13 +234,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Платеж по кредиту" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ix-At-n7I">
-                                <rect key="frame" x="94" y="50" width="186" height="26"/>
+                                <rect key="frame" x="94.5" y="50" width="186" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="0.97772808200000005" green="0.96146038749999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Переплата по кредиту" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjB-Tm-mn4">
-                                <rect key="frame" x="84" y="186" width="206" height="24"/>
+                                <rect key="frame" x="84.5" y="186" width="206" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.97772808200000005" green="0.96146038749999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
